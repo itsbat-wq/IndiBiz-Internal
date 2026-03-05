@@ -955,9 +955,9 @@ function renderBannerPreview() {
     if (!grid) return;
 
     const banners = [
-        { src: '../banner1.png', label: 'Banner 1 – Utama' },
-        { src: '../banner2.png', label: 'Banner 2 – Kumpulkan Poin' },
-        { src: '../banner3.png', label: 'Banner 3 – Top Customer' }
+        { src: '../images/banner1.png', label: 'Banner 1 – Utama' },
+        { src: '../images/banner2.png', label: 'Banner 2 – Kumpulkan Poin' },
+        { src: '../images/banner3.png', label: 'Banner 3 – Top Customer' }
     ];
 
     grid.innerHTML = banners.map(b => `
