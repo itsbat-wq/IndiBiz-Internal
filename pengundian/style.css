@@ -104,9 +104,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 600px;
-    opacity: 0.13;
+    width: 1400px;
+    height: 1000px;
+    opacity: 0.20;
     z-index: 0;
     pointer-events: none;
 }
@@ -149,6 +149,14 @@ body {
     height: 65px;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
     animation: pulse 3s ease-in-out infinite;
+}
+
+.partner-logo.telkom {
+    height: 80px;
+}
+
+.partner-logo.danantara {
+    height: 40px;
 }
 
 /* ============= HEADER ============= */
