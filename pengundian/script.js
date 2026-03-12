@@ -169,9 +169,9 @@ function playCelebrationSound() {
 function createParticles() {
     const container = document.getElementById('particles');
     const colors = ['#1d4ed8', '#7c3aed', '#db2777', '#d97706', '#0891b2', '#059669', '#f59e0b', '#ec4899'];
-    const shapes = ['circle', 'square', 'diamond', 'star'];
+    const shapes = ['circle', 'square', 'diamond'];
 
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 250; i++) {
         const particle = document.createElement('div');
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
         particle.className = `particle particle-${shape}`;
@@ -192,17 +192,12 @@ function createParticles() {
         if (shape === 'diamond') {
             particle.style.transform = 'rotate(45deg)';
         }
-        if (shape === 'star') {
-            particle.innerHTML = '<i class="fas fa-star" style="font-size:' + size + 'px; color:' + color + ';"></i>';
-            particle.style.background = 'none';
-            particle.style.boxShadow = 'none';
-        }
 
         container.appendChild(particle);
     }
 
     // Add ribbon-like particles
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 60; i++) {
         const ribbon = document.createElement('div');
         ribbon.className = 'particle particle-ribbon';
         const color = colors[Math.floor(Math.random() * colors.length)];
