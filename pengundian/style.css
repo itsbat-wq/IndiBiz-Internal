@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #f1f5f9 60%, #f8fafc 100%);
     color: #1e293b;
     overflow-x: hidden;
@@ -199,8 +199,13 @@ body {
 .title-line1 {
     font-size: 2.0rem;
     font-weight: 900;
-    color: #1d4ed8; /* Corporate Blue */
-    letter-spacing: 1px;
+    background: linear-gradient(135deg, #1d4ed8, #7c3aed, #db2777, #d97706);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+    letter-spacing: 2px;
 }
 
 .title-line3 {
@@ -238,8 +243,9 @@ body {
     font-size: 1.05rem;
     color: #b45309;
     margin-top: 10px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
+    animation: pulseGlow 2s ease-in-out infinite;
 }
 
 .lottery-subtitle i {
@@ -247,7 +253,17 @@ body {
     margin: 0 4px;
 }
 
+@keyframes pulseGlow {
 
+    0%,
+    100% {
+        text-shadow: 0 0 8px rgba(180, 83, 9, 0.2);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(180, 83, 9, 0.5);
+    }
+}
 
 /* ============= SLOT MACHINE ============= */
 .slot-container {
@@ -272,24 +288,30 @@ body {
     display: flex;
     gap: 12px;
     padding: 30px 40px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Clean flat shadow */
+    background: rgba(255, 255, 255, 0.85);
+    border: 4px solid rgba(29, 78, 216, 0.25);
+    border-radius: 28px;
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.15),
+        0 0 120px rgba(99, 102, 241, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .slot-reel {
     width: 90px;
     height: 130px;
-    background: #f8fafc;
-    border-radius: 12px;
+    background: linear-gradient(180deg, #eef2ff 0%, #ffffff 50%, #eef2ff 100%);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
-    border: 1px solid #cbd5e1;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Flat inner shadow */
+    border: 3px solid rgba(99, 102, 241, 0.3);
+    box-shadow:
+        inset 0 6px 15px rgba(99, 102, 241, 0.1),
+        0 8px 25px rgba(0, 0, 0, 0.12);
     transition: transform 0.1s ease;
 }
 
@@ -334,7 +356,298 @@ body {
     }
 }
 
-/* Removed unused ornament keyframes */
+/* ============= DECORATIVE ORNAMENTS - MANY MORE ============= */
+.ornament {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ornament-star i {
+    font-size: 1.8rem;
+    color: #d97706;
+    filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.4));
+    animation: starSpin 4s linear infinite;
+}
+
+.ornament-sparkle i {
+    font-size: 1.4rem;
+    color: #7c3aed;
+    filter: drop-shadow(0 2px 8px rgba(124, 58, 237, 0.4));
+    animation: sparklePulse 2s ease-in-out infinite;
+}
+
+.ornament-gift i {
+    font-size: 1.6rem;
+    color: #db2777;
+    filter: drop-shadow(0 2px 8px rgba(219, 39, 119, 0.3));
+    animation: giftBounce 3s ease-in-out infinite;
+}
+
+.ornament-ribbon i {
+    font-size: 1.5rem;
+    color: #ec4899;
+    filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.4));
+    animation: ribbonWave 3s ease-in-out infinite;
+}
+
+.ornament-confetti i {
+    font-size: 1.3rem;
+    color: #f59e0b;
+    filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.4));
+    animation: confettiSpin 5s linear infinite;
+}
+
+.ornament-medal i {
+    font-size: 1.7rem;
+    color: #f59e0b;
+    filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.4));
+    animation: medalSwing 2.5s ease-in-out infinite;
+}
+
+.ornament-crown i {
+    font-size: 2rem;
+    color: #d97706;
+    filter: drop-shadow(0 3px 10px rgba(217, 119, 6, 0.5));
+    animation: crownFloat 3s ease-in-out infinite;
+}
+
+.ornament-burst i {
+    font-size: 1.8rem;
+    color: #6366f1;
+    filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.4));
+    animation: starSpin 6s linear infinite;
+}
+
+.ornament-balloon i {
+    font-size: 1.5rem;
+    color: #10b981;
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.4));
+    animation: giftBounce 2.5s ease-in-out infinite;
+}
+
+.ornament-star2 i {
+    font-size: 1.4rem;
+    color: #8b5cf6;
+    filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.4));
+    animation: sparklePulse 3s ease-in-out infinite;
+}
+
+/* Ornament positions */
+.ornament-tl {
+    top: 18%;
+    left: 8%;
+}
+
+.ornament-tr {
+    top: 18%;
+    right: 8%;
+    animation-delay: -1s;
+}
+
+.ornament-bl {
+    bottom: 22%;
+    left: 12%;
+    animation-delay: -0.5s;
+}
+
+.ornament-br {
+    bottom: 22%;
+    right: 12%;
+    animation-delay: -1.5s;
+}
+
+.ornament-ml {
+    top: 50%;
+    left: 5%;
+    animation-delay: -2s;
+}
+
+.ornament-mr {
+    top: 50%;
+    right: 5%;
+    animation-delay: -0.8s;
+}
+
+/* Additional positions */
+.ornament-tl2 {
+    top: 12%;
+    left: 15%;
+    animation-delay: -0.3s;
+}
+
+.ornament-tr2 {
+    top: 12%;
+    right: 15%;
+    animation-delay: -2.5s;
+}
+
+.ornament-bl2 {
+    bottom: 28%;
+    left: 6%;
+    animation-delay: -1.2s;
+}
+
+.ornament-br2 {
+    bottom: 28%;
+    right: 6%;
+    animation-delay: -0.7s;
+}
+
+.ornament-ml2 {
+    top: 38%;
+    left: 10%;
+    animation-delay: -1.8s;
+}
+
+.ornament-mr2 {
+    top: 38%;
+    right: 10%;
+    animation-delay: -2.2s;
+}
+
+.ornament-tc {
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ornament-bc {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: -1.5s;
+}
+
+.ornament-tl3 {
+    top: 30%;
+    left: 3%;
+    animation-delay: -3s;
+}
+
+.ornament-tr3 {
+    top: 30%;
+    right: 3%;
+    animation-delay: -0.5s;
+}
+
+.ornament-ml3 {
+    top: 60%;
+    left: 8%;
+    animation-delay: -1s;
+}
+
+.ornament-mr3 {
+    top: 60%;
+    right: 8%;
+    animation-delay: -2s;
+}
+
+@keyframes starSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(90deg) scale(1.2);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+
+    75% {
+        transform: rotate(270deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes sparklePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
+
+@keyframes giftBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+@keyframes ribbonWave {
+
+    0%,
+    100% {
+        transform: rotate(-10deg) scale(1);
+    }
+
+    33% {
+        transform: rotate(15deg) scale(1.1);
+    }
+
+    66% {
+        transform: rotate(-5deg) scale(1.05);
+    }
+}
+
+@keyframes confettiSpin {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(180deg) translateY(-8px);
+    }
+
+    100% {
+        transform: rotate(360deg) translateY(0);
+    }
+}
+
+@keyframes medalSwing {
+
+    0%,
+    100% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes crownFloat {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-12px) scale(1.1);
+    }
+}
 
 .slot-reel.spinning span {
     animation: reelSpin 0.08s linear infinite;
@@ -409,20 +722,22 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 16px 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    padding: 18px 60px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
     color: #ffffff;
-    background: #1d4ed8; /* Corporate Blue Solid */
+    background: linear-gradient(135deg, #1d4ed8, #6366f1, #7c3aed);
     border: none;
-    border-radius: 8px;
+    border-radius: 16px;
     cursor: pointer;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
-    animation: fadeInUp 1s ease 0.6s both;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 8px 32px rgba(29, 78, 216, 0.35),
+        0 0 60px rgba(99, 102, 241, 0.15);
+    animation: fadeInUp 1s ease 0.6s both, btnPulse 2s ease-in-out infinite 1.6s;
     position: relative;
     overflow: hidden;
 }
@@ -449,13 +764,25 @@ body {
     }
 }
 
+@keyframes btnPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 32px rgba(29, 78, 216, 0.35), 0 0 60px rgba(99, 102, 241, 0.15);
+    }
+
+    50% {
+        box-shadow: 0 8px 48px rgba(29, 78, 216, 0.5), 0 0 100px rgba(99, 102, 241, 0.3);
+    }
+}
+
 .btn-start:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.4);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 48px rgba(29, 78, 216, 0.5), 0 0 100px rgba(99, 102, 241, 0.3);
 }
 
 .btn-start:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98);
 }
 
 .btn-start:disabled {
@@ -466,7 +793,7 @@ body {
 
 .btn-start:disabled:hover {
     transform: none;
-    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+    box-shadow: 0 8px 32px rgba(29, 78, 216, 0.35);
 }
 
 /* ============= STOP BUTTON ============= */
@@ -474,20 +801,22 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 16px 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    padding: 18px 60px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
     color: #ffffff;
-    background: #dc2626; /* Telkom Red Solid */
+    background: linear-gradient(135deg, #dc2626, #ef4444, #f87171);
     border: none;
-    border-radius: 8px;
+    border-radius: 16px;
     cursor: pointer;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
-    animation: fadeInUp 0.5s ease both;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 8px 32px rgba(220, 38, 38, 0.35),
+        0 0 60px rgba(239, 68, 68, 0.15);
+    animation: fadeInUp 0.5s ease both, stopBtnPulse 1s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
@@ -603,16 +932,18 @@ body {
 .winner-slot-box .slot-reel {
     width: 52px;
     height: 72px;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
+    background: linear-gradient(180deg, #fef3c7, #fde68a, #fef3c7);
+    border: 2px solid #f59e0b;
     border-radius: 8px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Flat inner shadow */
+    box-shadow:
+        0 4px 20px rgba(245, 158, 11, 0.25),
+        0 0 40px rgba(245, 158, 11, 0.1);
 }
 
 .winner-slot-box .slot-reel span {
     font-size: 2rem;
     font-weight: 900;
-    color: #1e3a8a;
+    color: #92400e;
 }
 
 /* Winner Info */
@@ -666,37 +997,37 @@ body {
     align-items: center;
     gap: 10px;
     padding: 14px 40px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-valid {
     color: #ffffff;
-    background: #16a34a; /* Solid Green */
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    box-shadow: 0 6px 24px rgba(34, 197, 94, 0.3);
 }
 
 .btn-valid:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.5);
 }
 
 .btn-selesai {
     color: #ffffff;
-    background: #2563eb; /* Solid Blue */
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.3);
 }
 
 .btn-selesai:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.5);
 }
 
 /* ============= RESPONSIVE ============= */
